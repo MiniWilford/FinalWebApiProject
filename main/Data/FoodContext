@@ -8,12 +8,12 @@ namespace Main.Data
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-           builder.Entity<Foods>().HasData(
-                new Foods{FoodId = 1, FoodName = "Pizza", FoodDescription = "Round and cheesey", FoodType = "Carbohydrates", FoodColor = "Mixed"},
-                new Foods{FoodId = 2, FoodName = "Tomato", FoodDescription = "Red and round", FoodType = "Vegetable", FoodColor = "Red"}
+           builder.Entity<Food>().HasData(
+                new Food{FoodId = 1, FoodName = "Pizza", FoodDescription = "Round and cheesey", FoodType = "Carbohydrates", FoodColor = "Mixed"},
+                new Food{FoodId = 2, FoodName = "Tomato", FoodDescription = "Red and round", FoodType = "Vegetable", FoodColor = "Red"}
            );
         }
 
-        public DbSet<Foods> FoodId {get; set;}
+        public DbSet<Food> FoodId {get; set;}
     }
 }

@@ -14,6 +14,12 @@ builder.Services.AddDbContext<MovieContext>(options => options.UseSqlServer(
 builder.Services.AddDbContext<BookContext>(options => options.UseSqlServer(
     builder.Configuration.GetConnectionString("BookConnection")
 ));
+builder.Services.AddDbContext<StudentContext>(options => options.UseSqlServer(
+    builder.Configuration.GetConnectionString("StudentConnection")
+));
+builder.Services.AddDbContext<FoodContext>(options => options.UseSqlServer(
+    builder.Configuration.GetConnectionString("FoodConnection")
+));
 
 
 var app = builder.Build();
