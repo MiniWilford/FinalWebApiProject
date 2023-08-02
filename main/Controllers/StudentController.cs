@@ -1,3 +1,4 @@
+using FinalWebApiProject.Interfaces;
 using Main.Data;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,18 +11,28 @@ namespace Main.Controllers
     {
         private readonly ILogger<StudentController> _logger;
 
-        private readonly StudentContext _context;
+        private readonly IStudentContextDAO _context;
 
-        public StudentController(ILogger<StudentController> logger, StudentContext context)
+        public StudentController(ILogger<StudentController> logger, IStudentContextDAO context)
         {
             _logger = logger;
             _context = context;
         }
 
-        [HttpGet]
-        public IActionResult Get()
+        [HttpGet("id")]
+        public IActionResult Get(int id)
         {
-            return Ok(_context.StudentId.ToList());
+            var student = _context.GetStudentById(id);
+            if(student == null)
+                return NotFound(id);
+
+            return Ok(_context.GetStudentById(id));
+        }
+
+        
+        [HttpGet]
+        public IActionResult Get() {
+            return Ok(_context.GetAllStudents());
         }
     }
 }

@@ -17,6 +17,6 @@ namespace Main.Data
            );
         }
 
-        public DbSet<Movies> Movie {get; set;}
+        public DbSet<Movies> Movies {get; set;}
     }
 }

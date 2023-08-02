@@ -1,5 +1,6 @@
 using Main.Data;
 using Microsoft.AspNetCore.Mvc;
+using FinalWebApiProject.Interfaces;
 
 namespace Main.Controllers
 {
@@ -10,18 +11,27 @@ namespace Main.Controllers
     {
         private readonly ILogger<BookController> _logger;
 
-        private readonly BookContext _context;
+        private readonly IBookContextDAO _context;
 
-        public BookController(ILogger<BookController> logger, BookContext context)
+        public BookController(ILogger<BookController> logger, IBookContextDAO context)
         {
             _logger = logger;
             _context = context;
         }
 
+        [HttpGet("id")]
+        public IActionResult Get(int id)
+        {
+            var book = _context.GetBookById(id);
+            if(book == null)
+                return NotFound(id);
+
+            return Ok(_context.GetBookById(id));
+        }
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok(_context.Book.ToList());
+            return Ok(_context.GetAllBooks());
         }
     }
 }

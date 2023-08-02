@@ -1,3 +1,4 @@
+using FinalWebApiProject.Interfaces;
 using Main.Data;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,18 +11,28 @@ namespace Main.Controllers
     {
         private readonly ILogger<MovieController> _logger;
 
-        private readonly MovieContext _context;
+        private readonly IMovieContextDAO _context;
 
-        public MovieController(ILogger<MovieController> logger, MovieContext context)
+        public MovieController(ILogger<MovieController> logger, IMovieContextDAO context)
         {
             _logger = logger;
             _context = context;
         }
 
+        [HttpGet("id")]
+        public IActionResult Get(int id)
+        {
+            var movie = _context.GetMovieById(id);
+            if(movie == null)
+                return NotFound(id);
+
+            return Ok(_context.GetMovieById(id));
+        }
+
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok(_context.Movie.ToList());
+            return Ok(_context.GetAllMovies());
         }
     }
 }

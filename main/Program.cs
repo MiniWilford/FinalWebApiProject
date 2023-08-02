@@ -1,3 +1,4 @@
+using FinalWebApiProject.Interfaces;
 using Main.Data;
 using Microsoft.EntityFrameworkCore;
 
@@ -21,6 +22,11 @@ builder.Services.AddDbContext<FoodContext>(options => options.UseSqlServer(
     builder.Configuration.GetConnectionString("FoodConnection")
 ));
 
+// Add ContextDAO Services
+builder.Services.AddScoped<IStudentContextDAO, StudentContextDAO>();
+builder.Services.AddScoped<IFoodContextDAO, FoodContextDAO>();
+builder.Services.AddScoped<IBookContextDAO, BookContextDAO>();
+builder.Services.AddScoped<IMovieContextDAO, MovieContextDAO>();
 
 var app = builder.Build();
 

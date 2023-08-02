@@ -17,6 +17,6 @@ namespace Main.Data
            );
         }
 
-        public DbSet<Books> Book {get; set;}
+        public DbSet<Books> Books {get; set;}
     }
 }

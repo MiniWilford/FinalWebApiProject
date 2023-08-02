@@ -1,3 +1,4 @@
+using FinalWebApiProject.Interfaces;
 using Main.Data;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,18 +11,28 @@ namespace Main.Controllers
     {
         private readonly ILogger<FoodController> _logger;
 
-        private readonly FoodContext _context;
+        private readonly IFoodContextDAO _context;
 
-        public FoodController(ILogger<FoodController> logger, FoodContext context)
+        public FoodController(ILogger<FoodController> logger, IFoodContextDAO context)
         {
             _logger = logger;
             _context = context;
         }
 
+        [HttpGet("id")]
+        public IActionResult Get(int id)
+        {
+            var food = _context.GetFoodById(id);
+            if(food == null)
+                return NotFound(id);
+
+            return Ok(_context.GetFoodById(id));
+        }
+
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok(_context.FoodId.ToList());
+            return Ok(_context.GetAllFood());
         }
     }
 }
