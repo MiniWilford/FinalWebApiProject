@@ -22,11 +22,11 @@ namespace Main.Controllers
         [HttpGet("id")]
         public IActionResult Get(int id)
         {
-            var book = _context.GetBookById(id);
+            var book = _context.GetBookByISBN(id);
             if(book == null)
                 return NotFound(id);
 
-            return Ok(_context.GetBookById(id));
+            return Ok(book);
         }
         [HttpGet]
         public IActionResult Get()

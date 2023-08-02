@@ -15,9 +15,9 @@ namespace Main.Data
             return _context.Books.ToList();
         }
 
-        public Books GetBookById(int id)
+        public Books GetBookByISBN(long ISBN)
         {
-            return (Books)_context.Books.Where(x => x.ISBN.Equals(id)); // TODO: .FirstOrDefault()
+            return (Books)_context.Books.Where(x => x.ISBN.Equals(ISBN)); // TODO: .FirstOrDefault()
         }
     }
 }

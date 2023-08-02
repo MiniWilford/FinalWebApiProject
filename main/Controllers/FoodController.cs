@@ -26,7 +26,7 @@ namespace Main.Controllers
             if(food == null)
                 return NotFound(id);
 
-            return Ok(_context.GetFoodById(id));
+            return Ok(food);
         }
 
         [HttpGet]

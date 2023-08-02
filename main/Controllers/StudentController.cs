@@ -26,7 +26,7 @@ namespace Main.Controllers
             if(student == null)
                 return NotFound(id);
 
-            return Ok(_context.GetStudentById(id));
+            return Ok(student);
         }
 
         

@@ -26,7 +26,7 @@ namespace Main.Controllers
             if(movie == null)
                 return NotFound(id);
 
-            return Ok(_context.GetMovieById(id));
+            return Ok(movie);
         }
 
         [HttpGet]
