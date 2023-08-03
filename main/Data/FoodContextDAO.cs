@@ -17,7 +17,7 @@ namespace Main.Data
 
         public Food GetFoodById(int id)
         {
-            return (Food)_context.Food.Where(x => x.FoodId.Equals(id)); // TODO: .FirstOrDefault()
+            return (Food)_context.Food.Where(x => x.FoodId.Equals(id)); // TODO .FirstOrDefault()
         }
     }
 }

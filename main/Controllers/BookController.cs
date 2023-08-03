@@ -19,12 +19,12 @@ namespace Main.Controllers
             _context = context;
         }
 
-        [HttpGet("id")]
-        public IActionResult Get(int id)
+        [HttpGet("ISBN")]
+        public IActionResult Get(long ISBN)
         {
-            var book = _context.GetBookByISBN(id);
+            var book = _context.GetBookByISBN(ISBN);
             if(book == null)
-                return NotFound(id);
+                return NotFound(ISBN);
 
             return Ok(book);
         }

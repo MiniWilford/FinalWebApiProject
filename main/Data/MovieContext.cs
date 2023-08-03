@@ -15,6 +15,7 @@ namespace Main.Data
                 new Movies{Id = 4, Title = "Hellboy", Genre = "Fantasy/Action", Director = "Guillermo del Toro", Year = 2004},
                 new Movies{Id = 5, Title = "The Shawshank Redemption", Genre = "Drama", Director = "Frank Darabont", Year = 1994}
            );
+           //builder.Entity<Movies>().HasKey(i => i.Id).HasName("PrimaryKey_BlogId");
         }
 
         public DbSet<Movies> Movies {get; set;}

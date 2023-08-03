@@ -14,6 +14,6 @@ namespace Main.Data
            );
         }
 
-        public DbSet<Students> Students {get; set;}
+        public DbSet<Students> Student {get; set;}
     }
 }

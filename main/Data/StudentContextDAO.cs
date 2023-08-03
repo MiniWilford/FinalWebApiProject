@@ -1,6 +1,5 @@
 using System.Linq;
 using FinalWebApiProject.Interfaces;
-using Main.Data;
 
 namespace Main.Data
 {
@@ -12,12 +11,12 @@ namespace Main.Data
         }
 
         public List<Students> GetAllStudents() {
-            return _context.Students.ToList();
+            return _context.Student.ToList();
         }
 
         public Students GetStudentById(int id)
         {
-            return (Students)_context.Students.Where(x => x.StudentId.Equals(id)); // TODO: .FirstOrDefault()
+            return (Students)_context.Student.Where(x => x.StudentId.Equals(id)); // TODO .FirstOrDefault()
         }
     }
 }
