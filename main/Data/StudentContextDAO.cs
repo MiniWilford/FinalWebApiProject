@@ -4,9 +4,9 @@ using FinalWebApiProject.Interfaces;
 namespace Main.Data
 {
     public class StudentContextDAO : IStudentContextDAO {
-        private StudentContext _context;
+        private DataContext _context;
 
-        public StudentContextDAO(StudentContext context) {
+        public StudentContextDAO(DataContext context) {
             _context = context;
         }
 

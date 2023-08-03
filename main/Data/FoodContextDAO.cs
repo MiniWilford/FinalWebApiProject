@@ -5,9 +5,9 @@ using Main.Data;
 namespace Main.Data
 {
     public class FoodContextDAO : IFoodContextDAO {
-        private FoodContext _context;
+        private DataContext _context;
 
-        public FoodContextDAO(FoodContext context) {
+        public FoodContextDAO(DataContext context) {
             _context = context;
         }
 

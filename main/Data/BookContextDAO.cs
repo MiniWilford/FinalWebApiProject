@@ -5,9 +5,9 @@ using Main.Data;
 namespace Main.Data
 {
     public class BookContextDAO : IBookContextDAO {
-        private BookContext _context;
+        private DataContext _context;
 
-        public BookContextDAO(BookContext context) {
+        public BookContextDAO(DataContext context) {
             _context = context;
         }
 

@@ -5,9 +5,9 @@ using Main.Data;
 namespace Main.Data
 {
     public class MovieContextDAO : IMovieContextDAO {
-        private MovieContext _context;
+        private DataContext _context;
 
-        public MovieContextDAO(MovieContext context) {
+        public MovieContextDAO(DataContext context) {
             _context = context;
         }
 
