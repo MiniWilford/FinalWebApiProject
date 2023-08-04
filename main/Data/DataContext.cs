@@ -25,7 +25,7 @@ namespace Main.Data
                 new Food{FoodId = 1, FoodName = "Pizza", FoodDescription = "Round and cheesey", FoodType = "Carbohydrates", FoodColor = "Mixed"},
                 new Food{FoodId = 2, FoodName = "Tomato", FoodDescription = "Red and round", FoodType = "Vegetable", FoodColor = "Red"}
            );
-          
+          builder.Entity<Food>().HasKey(f => f.FoodId).HasName("PrimaryKey_FoodId");
 
 
           builder.Entity<Movies>().HasData(
@@ -35,14 +35,14 @@ namespace Main.Data
                 new Movies{Id = 4, Title = "Hellboy", Genre = "Fantasy/Action", Director = "Guillermo del Toro", Year = 2004},
                 new Movies{Id = 5, Title = "The Shawshank Redemption", Genre = "Drama", Director = "Frank Darabont", Year = 1994}
            );
-           //builder.Entity<Movies>().HasKey(i => i.Id).HasName("PrimaryKey_BlogId");
+           builder.Entity<Movies>().HasKey(i => i.Id).HasName("PrimaryKey_BlogId");
           
 
            builder.Entity<Students>().HasData(
                 new Students{StudentId = 1, StudentName = "Haley Beyersdoerfer", DateOfBirth = new DateTime(2001, 7, 6), StudentProgram = "Bachelors in Game Development & Design", StudentYear = 3},
                 new Students{StudentId = 2, StudentName = "Kyle DeJarnett", DateOfBirth = new DateTime(2000, 6, 26), StudentProgram = "Bachelors in Information Technology", StudentYear = 2}
            );
-          
+          builder.Entity<Students>().HasKey(s => s.StudentId).HasName("PrimaryKey_StudentID");
         
         }
         public DbSet<Books> Books {get; set;}
