@@ -1,5 +1,5 @@
 using FinalWebApiProject.Interfaces;
-using Main.Data;
+using Main.Migrations;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Main.Controllers

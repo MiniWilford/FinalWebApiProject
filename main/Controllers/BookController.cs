@@ -1,4 +1,4 @@
-using Main.Data;
+using Main.Migrations;
 using Microsoft.AspNetCore.Mvc;
 using FinalWebApiProject.Interfaces;
 
