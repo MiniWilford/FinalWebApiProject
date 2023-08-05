@@ -1,6 +1,6 @@
 using System.Linq;
 using FinalWebApiProject.Interfaces;
-using Main.Data;
+using Main.Migrations;
 using Main.Model;
 
 namespace Main.Data

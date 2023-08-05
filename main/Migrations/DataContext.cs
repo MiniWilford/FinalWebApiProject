@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Main.Model;
 
-namespace Main.Data
+namespace Main.Migrations
 {
     public class DataContext : DbContext
     {

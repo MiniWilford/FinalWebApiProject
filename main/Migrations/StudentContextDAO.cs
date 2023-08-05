@@ -2,7 +2,7 @@ using System.Linq;
 using FinalWebApiProject.Interfaces;
 using Main.Model;
 
-namespace Main.Data
+namespace Main.Migrations
 {
     public class StudentContextDAO : IStudentContextDAO {
         private DataContext _context;
