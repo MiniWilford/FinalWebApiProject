@@ -1,3 +1,5 @@
+using Main.Model;
+
 namespace FinalWebApiProject.Interfaces
 {
     public interface IFoodContextDAO {

@@ -1,5 +1,6 @@
 using FinalWebApiProject.Interfaces;
 using Main.Data;
+using Main.Model;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);

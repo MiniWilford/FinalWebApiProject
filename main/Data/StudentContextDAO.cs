@@ -1,5 +1,6 @@
 using System.Linq;
 using FinalWebApiProject.Interfaces;
+using Main.Model;
 
 namespace Main.Data
 {
