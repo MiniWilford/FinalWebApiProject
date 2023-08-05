@@ -10,6 +10,8 @@ namespace Main.Data
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
+            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+
             builder.Entity<Books>().HasData(
                  new Books { ISBN = 9781400226573, Title = "Don't Look Back", Genre = "Mystery/Fiction", Author = "Jennifer L. Armentrout", Year = 2014 },
                  new Books { ISBN = 9780547928227, Title = "The Hobbit", Genre = "Fantasy", Author = "J.R.R. Tolkien", Year = 1937 },
