@@ -11,12 +11,12 @@ namespace Main.Data
         }
 
         public List<Students> GetAllStudents() {
-            return _context.Student.ToList();
+            return _context.Students.ToList();
         }
 
         public Students GetStudentById(int id)
         {
-            return (Students)_context.Student.Where(x => x.StudentId.Equals(id)); // TODO .FirstOrDefault()
+            return (Students)_context.Students.Where(x => x.StudentId.Equals(id)); // TODO .FirstOrDefault()
         }
     }
 }

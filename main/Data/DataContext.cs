@@ -48,7 +48,7 @@ namespace Main.Data
         public DbSet<Books> Books {get; set;}
         public DbSet<Food> Food {get; set;}
         public DbSet<Movies> Movies {get; set;}
-        public DbSet<Students> Student {get; set;}
+        public DbSet<Students> Students {get; set;}
 
     }
 
